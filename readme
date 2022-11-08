@@ -1,0 +1,58 @@
+game:
+
+building types:
+Consumer
+Producer
+Converter
+
+Pipelines:
+Consumer:
+Cant start if:
+- Not enough power
+- Not enough materials
+- Already running
+Can get stuck if:
+- Not enough power
+Cant finish if:
+- No modifyable global state
+
+Producer:
+Cant start if:
+- Not enough power
+- already running
+Can get stuck if:
+- Not enough power
+Cant finish if:
+- Can't modify global state
+- No output space
+
+Converter:
+Cant start if:
+- Not enough power
+- Already running
+Can get stuck if:
+- Not enough power
+Cant finish if:
+- No output space
+
+Uses:
+Consumer:
+- Power stations (coal burners, etc)
+- Research centers
+- Sellers of any kind
+- Resource destroyers
+
+Producer:
+- Mines, harvesters
+
+Converter:
+- Refineries,
+- Assembly machines
+- Most machines ngl
+
+
+Each tick:
+Producers fill their output buffers (if possible)
+Move all items from output buffers to input buffers as determined by global state
+Converters process items in place
+Consumers modify global state
